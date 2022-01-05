@@ -45,12 +45,19 @@ class Index extends Component {
     })
   }
 
+  go2ui() {
+    Taro.navigateTo({
+      url: '/pages/ui/index'
+    })
+  }
+
   render() {
     const { userStore: { userInfo } } = this.props
     return (
       <View className='index'>
         <View>{userInfo.name}</View>
         <Button onClick={this.changeName.bind(this)}>change name</Button>
+        <Button onClick={this.go2ui.bind(this)}>go2ui</Button>
         <Item color="red" selected={true} count={23} onChange={this.handleChange} />
         <Item />
       </View>

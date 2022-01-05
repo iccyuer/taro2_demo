@@ -31,6 +31,7 @@ const config = {
   },
   plugins: [
     '@tarojs/plugin-less',
+    '@tarojs/plugin-sass',
     '@tarojs/plugin-terser'
   ],
   defineConstants: {
