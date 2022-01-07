@@ -23,6 +23,7 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
+      'pages/home/index',
       'pages/profile/index',
       'pages/ui/index'
     ],
@@ -38,7 +39,7 @@ class App extends Component {
       borderStyle: "white",
       list: [
         {
-          pagePath: "pages/index/index",
+          pagePath: "pages/home/index",
           text: "首页",
           iconPath: "./images/tabbar/home@2x.png",
           selectedIconPath: "./images/tabbar/home_active@2x.png"
@@ -50,6 +51,23 @@ class App extends Component {
           selectedIconPath: "./images/tabbar/my_active@2x.png"
         }
       ]
+    },
+    "subPackages": [
+      {
+        "root": "pages/goods",
+        "name": "goods",
+        "pages": [
+          "list/index", // 注册
+        ]
+      }
+    ],
+    preloadRule: {
+      "pages/index/index": {
+        network: "all",
+        packages: [
+          'pages/goods'
+        ]
+      }
     },
   }
 
