@@ -40,9 +40,15 @@ class Index extends Component {
   }
 
   handleChange(e) {
+    console.log('e', e)
+    console.log('this', this) // this->Item
     this.setState({
       counter: this.state.counter + 3
     })
+  }
+  handleChange2(e) {
+    console.log('e', e)
+    console.log('this', this) // this->this
   }
 
   go2ui() {
@@ -65,7 +71,7 @@ class Index extends Component {
         <Button onClick={this.changeName.bind(this)}>change name</Button>
         <Button onClick={this.go2ui.bind(this)}>go2ui</Button>
         <Button onClick={this.go2goods.bind(this)}>go2goods</Button>
-        <Item color="red" selected={true} count={23} onChange={this.handleChange} />
+        <Item color="red" selected={true} count={23} onChange={this.handleChange} onChange2={this.handleChange2.bind(this)} />
         <Item />
       </View>
     )

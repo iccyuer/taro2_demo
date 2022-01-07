@@ -22,7 +22,8 @@ class Item extends Component {
     color: 'blue',
     selected: false,
     count: 2,
-    onChange: () => {}
+    onChange: () => { },
+    onChange2: () => { }
   }
 
   handleClick(count, e) {
@@ -32,7 +33,7 @@ class Item extends Component {
   }
 
   render() {
-    let { color, selected, onChange } = this.props
+    let { color, selected, onChange, onChange2 } = this.props
     let { name, counter } = this.state
     return (
       <View className="item">
@@ -41,7 +42,8 @@ class Item extends Component {
         <View>{selected ? 'selected' : 'unselected'}</View>
         <View>Counter: {counter}</View>
         <Button onClick={this.handleClick.bind(this, counter)}>click me</Button>
-        <Button onClick={onChange.bind(this)}>handle out</Button>
+        <Button onClick={onChange.bind(this, 2)}>handle out</Button>
+        <Button onClick={onChange2.bind(this, 3)}>handle out2</Button>
       </View>
     )
   }
