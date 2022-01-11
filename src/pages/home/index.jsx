@@ -5,7 +5,7 @@ import { observer, inject } from '@tarojs/mobx'
 import './index.less'
 
 
-@inject('counterStore')
+@inject('userStore')
 @observer
 class Index extends Component {
 
@@ -30,10 +30,11 @@ class Index extends Component {
   componentDidHide() { }
 
   render() {
-    const { counterStore: { counter } } = this.props
+    const { userStore: { userInfo } } = this.props
     return (
       <View className='index'>
         home
+        <View>{userInfo.name}</View>
       </View>
     )
   }
