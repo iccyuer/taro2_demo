@@ -32,6 +32,10 @@ class Item extends Component {
     })
   }
 
+  innerFun(name) {
+    console.log('inner', name)
+  }
+
   render() {
     let { color, selected, onChange, onChange2 } = this.props
     let { name, counter } = this.state

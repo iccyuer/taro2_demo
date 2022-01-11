@@ -37,6 +37,7 @@ class Index extends Component {
   changeName() {
     const { userStore } = this.props
     userStore.setUserInfo({ name: 'klkl' })
+    this.Item.innerFun('klklk')
   }
 
   handleChange(e) {
@@ -72,7 +73,7 @@ class Index extends Component {
         <Button onClick={this.go2ui.bind(this)}>go2ui</Button>
         <Button onClick={this.go2goods.bind(this)}>go2goods</Button>
         <Item color="red" selected={true} count={23} onChange={this.handleChange} onChange2={this.handleChange2.bind(this)} />
-        <Item />
+        <Item ref={ref => this.Item = ref}/>
       </View>
     )
   }
