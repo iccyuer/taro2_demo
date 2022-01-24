@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
+import Time from './components/Time'
 
 import './index.less'
 
@@ -35,6 +36,7 @@ class Index extends Component {
       <View className='index'>
         home
         <View>{userInfo.name}</View>
+        <Time></Time>
       </View>
     )
   }

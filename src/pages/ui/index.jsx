@@ -1,7 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
+import { View, Button, Text, Swiper, SwiperItem } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 import { AtCountdown, AtTimeline } from 'taro-ui'
+
 import './index.less'
 import "taro-ui/dist/style/components/countdown.scss";
 import "taro-ui/dist/style/components/timeline.scss";
@@ -51,6 +52,39 @@ class Index extends Component {
           seconds={10}
           onTimeUp={this.onTimeUp.bind(this)}
         />
+
+        <Swiper
+          className='test-h'
+          indicatorColor='#999'
+          indicatorActiveColor='#333'
+          circular
+          indicatorDots>
+          <SwiperItem>
+            <View className='demo-text-1'>1</View>
+          </SwiperItem>
+          <SwiperItem>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+            <View className='demo-text-2'>2</View>
+          </SwiperItem>
+          <SwiperItem>
+            <View className='demo-text-3'>3</View>
+          </SwiperItem>
+        </Swiper>
         <AtTimeline
           items={[
             { title: '刷牙洗脸' },
