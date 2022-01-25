@@ -21,7 +21,9 @@ class Index extends Component {
   }
 
   componentDidMount() {
-    console.error('idnex#####')
+    // console.error('idnex#####')
+    let app = Taro.getApp()
+    console.log('g', app.globalData)
   }
 
   componentWillUnmount() { }

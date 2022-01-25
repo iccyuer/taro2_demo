@@ -6,6 +6,7 @@ import counterStore from './store/counter'
 import userStore from './store/user'
 
 import './app.less'
+import "@tarojs/async-await";
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -71,13 +72,32 @@ class App extends Component {
     },
   }
 
-  componentDidMount() { }
+  globalData = {
+    rpxToPx: 0,
+    pxToRpx: 0
+  };
+
+  componentDidMount() {
+    console.log('app-componentDidMount')
+    this.init()
+  }
 
   componentDidShow() { }
 
   componentDidHide() { }
 
   componentDidCatchError() { }
+
+  init() {
+    // 初始化其他的信息
+    Taro.getSystemInfo({
+      success: res => {
+        console.log("statusBarHeight", res);
+        this.globalData.rpxToPx = res.windowWidth / 750;
+        this.globalData.pxToRpx = 750 / res.windowWidth;
+      }
+    })
+  }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
