@@ -2,6 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 import Time from './components/Time'
+import SeckillCard from './components/SeckillCard'
 
 import './index.less'
 
@@ -14,7 +15,9 @@ class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
-  componentWillMount() { }
+  componentWillMount() {
+
+  }
 
   componentWillReact() {
     console.log('componentWillReact')

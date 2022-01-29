@@ -112,7 +112,6 @@ class Item extends Component {
     let { } = this.props
     let { list, scrollLeft, activeIndex, autoIndex, manualIndex } = this.state
     return (
-      // <View className="time">
       <ScrollView
         className='_Time'
         scrollX={true}
@@ -122,17 +121,14 @@ class Item extends Component {
         onScroll={this.onClassificationScroll.bind(this)}
         scrollWithAnimation={true}
       >
-        {/* <View className='cont'> */}
         {list.map((item, index) => {
           let { title, content } = item
           return <View onClick={this.switchCategory.bind(this, index)} id={`timeName_` + index} className={`timeName ${manualIndex == index ? 'active' : ''}`} key={`timeName` + index}>
-            <View>{title}</View>
-            <View>{content ? content : timeIndex >= index ? '抢购中' : '即将开始'}</View>
+            <View className="title">{title}</View>
+            <View className="content">{content ? content : timeIndex >= index ? '抢购中' : '即将开始'}</View>
           </View>
         })}
-        {/* </View> */}
       </ScrollView>
-      // </View>
     )
   }
 }
